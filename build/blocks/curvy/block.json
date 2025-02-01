@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "title": "Curvy",
   "category": "blockylicious",
-  "icon": "smiley",
   "description": "Curvy block description",
   "example": {
     "innerBlocks": [
