@@ -1,15 +1,17 @@
-import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
+import {
+	InnerBlocks,
+	useBlockProps,
+	useInnerBlocksProps,
+} from "@wordpress/block-editor";
 
 import "./editor.scss";
 
 export default function Edit() {
 	const blockProps = useBlockProps();
-	return (
-		<div {...blockProps}>
-			<InnerBlocks
-				template={[["blockylicious/clicky-button"]]}
-				allowedBlocks={["blockylicious/clicky-button"]}
-			/>
-		</div>
-	);
+	const innerBlocksProps = useInnerBlocksProps(blockProps, {
+		template: [["blockylicious/clicky-button"]],
+		allowedBlocks: ["blockylicious/clicky-button"],
+	});
+
+	return <div {...innerBlocksProps}></div>;
 }
