@@ -8,14 +8,15 @@ export const Curve = (props) => {
 		<div
 			style={{
 				position: "absolute",
+				top: !props.isBottom ? 0 : "initial",
+				bottom: props.isBottom ? 0 : "initial",
 				left: 0,
-				top: 0,
 				width: "100%",
 				overflow: "hidden",
 				height: props.height,
 				transform: `scaleX(${props.flipX ? -1 : 1}) rotate(${
 					props.flipY ? "180deg" : 0
-				})`,
+				}) scaleY(${props.isBottom ? -1 : 1})`,
 			}}
 		>
 			<svg
@@ -23,6 +24,7 @@ export const Curve = (props) => {
 				style={{
 					position: "absolute",
 					top: 0,
+					//left: props.flipY ? `${100 - props.width}%` : 0,
 					left: 0,
 					height: props.height,
 					width: `${props.width}%`,
@@ -30,8 +32,8 @@ export const Curve = (props) => {
 				viewBox="0 0 1200 120"
 			>
 				<path
-					style={{ fill: "white" }}
-					d={props.FlipY ? invertedPath : normalPath}
+					style={{ fill: props.color || "white" }}
+					d={props.flipY ? invertedPath : normalPath}
 				></path>
 			</svg>
 		</div>

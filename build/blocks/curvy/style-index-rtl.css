@@ -10,3 +10,15 @@
 .wp-block-blockylicious-curvy {
   position: relative;
 }
+.wp-block-blockylicious-curvy .curve {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.wp-block-blockylicious-curvy .curve.top-curve {
+  top: 0;
+}
+.wp-block-blockylicious-curvy .curve.bottom-curve {
+  bottom: 0;
+}

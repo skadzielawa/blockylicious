@@ -7,4 +7,19 @@
 
 .wp-block-blockylicious-curvy {
 	position: relative;
+
+	.curve {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+
+		&.top-curve {
+			top: 0;
+		}
+
+		&.bottom-curve {
+			bottom: 0;
+		}
+	}
 }
