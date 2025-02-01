@@ -4,5 +4,5 @@ import "./editor.scss";
 
 export default function Edit() {
 	const blockProps = useBlockProps();
-	return <div {...blockProps}>Clicky Group Edit</div>;
+	return <div {...blockProps}>Clicky Button Edit</div>;
 }
