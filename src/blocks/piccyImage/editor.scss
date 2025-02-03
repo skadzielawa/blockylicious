@@ -1,3 +1,18 @@
 .wp-block-blockylicious-piccy-image {
+	.media-select {
+		width: 100%;
+		padding: 10px 20px;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		cursor: pointer;
+		background: #ddd;
+		box-sizing: border-box;
+		border: 0;
+		box-shadow: none;
 
+		&:hover {
+			background: #ccc;
+		}
+	}
 }

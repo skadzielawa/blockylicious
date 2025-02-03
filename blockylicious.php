@@ -22,6 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Blockylicious {
 	static function init() {
 		add_action( 'init', function() {
+			add_action('enqueue_block_assets', function(){
+				wp_enqueue_style("dashicons");
+			});
 			add_filter('block_categories_all', function($categories) {
 				array_unshift($categories, [
 					'slug' => 'blockylicious',
