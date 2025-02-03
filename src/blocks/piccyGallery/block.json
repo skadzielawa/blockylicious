@@ -6,20 +6,10 @@
 	"title": "Piccy Gallery",
 	"category": "blockylicious",
 	"icon": "images-alt2",
-	"description": "An interactive image gallery",
 	"supports": {
-		"html": false,
-		"color": {
-			"background": true,
-			"text": true,
-			"link": false,
-			"gradients": true,
-			"enableContrastChecker": true
-		},
-		"spacing": {
-			"padding": true
-		}
+		"html": false
 	},
+	"description": "An interactive image gallery",
 	"textdomain": "blockylicious",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
