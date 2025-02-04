@@ -1,4 +1,8 @@
 .wp-block-blockylicious-piccy-gallery {
+	.image-preview {
+		width: 100%;
+	}
+
 	.gallery-thumbnails {
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
