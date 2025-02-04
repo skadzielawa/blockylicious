@@ -15,6 +15,14 @@ registerFormatType("blockylicious/low-highlight", {
 	className: "blockylicious-low-highlight",
 	edit: ({ onChange, value, contentRef }) => {
 		const [showColors, setShowColors] = useState(false);
+		const lowHighlight = value.activeFormats?.find(
+			(format) => format.type === "blockylicious/low-highlight",
+		);
+		const attributes = {
+			...(lowHighlight?.attributes || {}),
+			...(lowHighlight?.unregisteredAttributes || {}),
+		};
+		console.log(lowHighlight);
 		return (
 			<>
 				<RichTextToolbarButton
@@ -40,11 +48,16 @@ registerFormatType("blockylicious/low-highlight", {
 					>
 						<PanelBody>
 							<ColorPalette
+								value={attributes?.["data-color"]}
 								onChange={(newValue) => {
 									if (newValue) {
 										onChange(
 											applyFormat(value, {
 												type: "blockylicious/low-highlight",
+												attributes: {
+													"data-color": newValue,
+													style: `background-image: linear-gradient(to right, ${newValue}, ${newValue});`,
+												},
 											}),
 										);
 									} else {
