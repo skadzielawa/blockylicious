@@ -7,13 +7,15 @@ import { __ } from "@wordpress/i18n";
 import { RichTextToolbarButton, ColorPalette } from "@wordpress/block-editor";
 import { useState } from "@wordpress/element";
 import { Popover, PanelBody } from "@wordpress/components";
+import lowHighlightIcon from "./assets/low-highlight.svg";
+import lowHighlightActive from "./assets/low-highlight-active.svg";
 import "./style.scss";
 
 registerFormatType("blockylicious/low-highlight", {
 	title: __("Low Highlight", "blockylicious"),
 	tagName: "span",
 	className: "blockylicious-low-highlight",
-	edit: ({ onChange, value, contentRef }) => {
+	edit: ({ onChange, value, contentRef, isActive }) => {
 		const [showColors, setShowColors] = useState(false);
 		const lowHighlight = value.activeFormats?.find(
 			(format) => format.type === "blockylicious/low-highlight",
@@ -26,7 +28,13 @@ registerFormatType("blockylicious/low-highlight", {
 		return (
 			<>
 				<RichTextToolbarButton
-					icon={<div>test</div>}
+					icon={
+						<img
+							height={24}
+							width={24}
+							src={isActive ? lowHighlightActive : lowHighlightIcon}
+						/>
+					}
 					title={__("Low Highlight", "blockylicious")}
 					onClick={() => {
 						setShowColors(true);
