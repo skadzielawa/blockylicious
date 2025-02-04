@@ -1,6 +1,11 @@
-import { registerFormatType, applyFormat } from "@wordpress/rich-text";
+import {
+	registerFormatType,
+	applyFormat,
+	toggleFormat,
+} from "@wordpress/rich-text";
 import { __ } from "@wordpress/i18n";
 import { RichTextToolbarButton } from "@wordpress/block-editor";
+import "./style.scss";
 
 registerFormatType("blockylicious/low-highlight", {
 	title: __("Low Highlight", "blockylicious"),
@@ -13,7 +18,7 @@ registerFormatType("blockylicious/low-highlight", {
 				title={__("Low Highlight", "blockylicious")}
 				onClick={() => {
 					onChange(
-						applyFormat(value, {
+						toggleFormat(value, {
 							type: "blockylicious/low-highlight",
 						}),
 					);
