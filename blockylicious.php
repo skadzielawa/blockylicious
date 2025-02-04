@@ -46,17 +46,20 @@ final class Blockylicious {
 				'title' => __('Blockylicious call to action', 'blockylicious'),
 				'description' => __('A heading, paragraph and clicky button block', 'blockylicious' ),
 				'content' => '<!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center">Lorem ipsum</h2>
-<!-- /wp:heading -->
+				<h2 class="wp-block-heading has-text-align-center">Lorem ipsum</h2>
+				<!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Some paragraph text in here as a sub heading.</p>
-<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"align":"center"} -->
+				<p class="has-text-align-center">Some paragraph text in here as a sub heading.</p>
+				<!-- /wp:paragraph -->
 
-<!-- wp:blockylicious/clicky-group {"justifyContent":"center"} -->
-<!-- wp:blockylicious/clicky-button {"labelText":"Call to action","style":{"color":{"background":"#000000","text":"#FFFFFF"},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"20px","right":"20px"}}}} /-->
-<!-- /wp:blockylicious/clicky-group -->'
+				<!-- wp:blockylicious/clicky-group {"justifyContent":"center"} -->
+				<!-- wp:blockylicious/clicky-button {"labelText":"Call to action","style":{"color":{"background":"#000000","text":"#FFFFFF"},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"20px","right":"20px"}}}} /-->
+				<!-- /wp:blockylicious/clicky-group -->'
 			));
+
+			$script_url = plugins_url('build/index.js', __FILE__);
+			wp_enqueue_script('blockylicious-index', $script_url, array( 'wp-blocks', 'wp-element', 'wp-editor'));
 		} );
 	}
 
